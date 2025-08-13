@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./algovision-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./algovision-backend:/app
+      - /app/algovision-backend/venv
+    environment:
+      - DEBUG=1
+      - DJANGO_SETTINGS_MODULE=config.settings
+    command: python manage.py runserver 0.0.0.0:8000
+    networks:
+      - algovision-network
+
+  frontend:
+    build: ./algovision-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./algovision-frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+    networks:
+      - algovision-network
+
+networks:
+  algovision-network:
+    driver: bridge 
