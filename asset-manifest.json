@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ThinkVerse_social_site/static/css/main.08644151.css",
+    "main.js": "/ThinkVerse_social_site/static/js/main.e463920f.js",
+    "index.html": "/ThinkVerse_social_site/index.html",
+    "main.08644151.css.map": "/ThinkVerse_social_site/static/css/main.08644151.css.map",
+    "main.e463920f.js.map": "/ThinkVerse_social_site/static/js/main.e463920f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08644151.css",
+    "static/js/main.e463920f.js"
+  ]
+}
